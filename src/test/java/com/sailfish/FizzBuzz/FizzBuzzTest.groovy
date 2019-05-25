@@ -1,5 +1,7 @@
 package com.sailfish.FizzBuzz
 
+import javax.xml.transform.Result
+
 /**
  * @author sailfish* @create 2019-05-25-15:40
  */
@@ -69,5 +71,17 @@ class FizzBuzzTest extends spock.lang.Specification {
 
     }
 
+    def "fizzBuzz"() {
+        expect:
+        FizzBuzz fizzBuzz = new FizzBuzz()
+        fizzBuzz.of(input) == result
 
+        where: "simple data"
+        input   ||      result
+        1       ||      "1"
+        3       ||      "Fizz"
+        5       ||      "Buzz"
+        15      ||      "FizzBuzz"
+//        4       ||      5
+    }
 }
