@@ -32,3 +32,40 @@ A kata, or code kata, is defined as an exercise in programming which helps hone 
   - [Kata19: Word Chains](http://codekata.com/kata/kata19-word-chains/)
   - [Kata20: Klondike](http://codekata.com/kata/kata20-klondike/)
   - [Kata21: Simple Lists](http://codekata.com/kata/kata21-simple-lists/)
+
+
+## TDD编码方式
+
+- 先分解任务，分离关注点
+- 列Example，用实例化需求，澄清需求细节
+- 写测试，只关注需求，程序的输入输出，不关心中间过程
+- 写实现，不考虑别的需求，用最简单的方式满足当前这个小需求即可 • 重构，用手法消除代码里的坏味道
+- 写完，手动测试一下，基本没什么问题，有问题补个用例，修复
+- 转测试，小问题，补用例，修复
+- 代码整洁且用例齐全，信心满满地提交。
+
+
+## 实战
+
+### 停车场
+> 需求
+
+- 停车场(Parking Lot)可以停车、取车;
+- 不同的停车小哥(Parking Boy)能够依次或者按优先级(空置率、空闲车位数)在多个停车
+场中停放车辆;
+- 停车经理(Parking Manger)指挥多个停车小哥，也可以自己去停车。
+
+#### 需求一：停车场(Parking Lot)可以停车、取车;
+
+> 分解任务
+
+- 停车
+- 取车
+
+> 测试列表
+
+- 在一个未满的停车场停车
+- 在一个满的停车场停车
+- 在一个未空的停车场取车
+- 在一个空的停车场取车
+- 停车后再取车
