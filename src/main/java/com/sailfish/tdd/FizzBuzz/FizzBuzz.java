@@ -1,4 +1,4 @@
-package com.sailfish.FizzBuzz;
+package com.sailfish.tdd.FizzBuzz;
 
 /**
  * @author sailfish

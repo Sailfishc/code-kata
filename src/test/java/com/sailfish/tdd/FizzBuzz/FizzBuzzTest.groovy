@@ -1,7 +1,4 @@
-package com.sailfish.FizzBuzz
-
-import javax.xml.transform.Result
-
+package com.sailfish.tdd.FizzBuzz
 /**
  * @author sailfish* @create 2019-05-25-15:40
  */

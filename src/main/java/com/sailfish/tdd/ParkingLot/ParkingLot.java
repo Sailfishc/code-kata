@@ -1,4 +1,4 @@
-package com.sailfish.ParkingLot;
+package com.sailfish.tdd.ParkingLot;
 
 /**
  * @author sailfish

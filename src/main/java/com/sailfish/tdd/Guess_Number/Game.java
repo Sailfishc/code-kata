@@ -1,4 +1,4 @@
-package com.sailfish.Guess_Number;
+package com.sailfish.tdd.Guess_Number;
 
 /**
  * @author sailfish
