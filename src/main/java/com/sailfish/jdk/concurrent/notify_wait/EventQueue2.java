@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * @author chengyi
  * @version : EventQueue.java, v 0.1 2020年12月13日 9:15 下午 chengyi Exp $
  */
-public class EventQueue {
+public class EventQueue2 {
 
     private final int max;
 
@@ -22,17 +22,17 @@ public class EventQueue {
     private static final int DEFAULT_MAX_EVENT = 5;
 
 
-    public EventQueue() {
+    public EventQueue2() {
         this(DEFAULT_MAX_EVENT);
     }
 
-    public EventQueue(int max) {
+    public EventQueue2(int max) {
         this.max = max;
     }
 
     public void offer(Event event) {
         synchronized (queue) {
-            if (queue.size() >= max) {
+            while (queue.size() >= max) {
                 try {
                     queue.wait();
                 } catch (InterruptedException e) {
@@ -40,13 +40,13 @@ public class EventQueue {
                 }
             }
             queue.addLast(event);
-            queue.notify();
+            queue.notifyAll();
         }
     }
 
     public Event take() {
         synchronized (queue) {
-            if (queue.isEmpty()) {
+            while (queue.isEmpty()) {
                 try {
                     queue.wait();
                 } catch (InterruptedException e) {
@@ -54,7 +54,7 @@ public class EventQueue {
                 }
             }
             Event event = queue.removeFirst();
-            queue.notify();
+            queue.notifyAll();
             return event;
         }
     }
