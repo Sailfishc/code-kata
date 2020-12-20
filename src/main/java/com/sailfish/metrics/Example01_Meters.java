@@ -11,7 +11,7 @@ import com.codahale.metrics.MetricRegistry;
  * @author chengyi
  * @version : MetersExample.java, v 0.1 2020年12月14日 7:57 下午 chengyi Exp $
  */
-public class MetersExample {
+public class Example01_Meters {
 
     private final MetricRegistry metrics = new MetricRegistry();
     private final Meter requests = metrics.meter("requests");
@@ -22,7 +22,7 @@ public class MetersExample {
     }
 
     public static void main(String[] args) {
-        MetersExample metersExample = new MetersExample();
-        metersExample.handleRequest();
+        Example01_Meters example01Meters = new Example01_Meters();
+        example01Meters.handleRequest();
     }
 }
