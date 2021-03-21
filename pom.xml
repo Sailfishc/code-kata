@@ -84,6 +84,19 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.14.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.7.7</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.68.noneautotype</version>
+        </dependency>
     </dependencies>
 
     <build>
