@@ -31,12 +31,12 @@ public class IpCheck {
             return false;
         }
 
-        final String[] ipArr = ip.split("\\.");
-        if (ipArr.length != 4) {
+        final String[] ipSegment = ip.split("\\.");
+        if (ipSegment.length != 4) {
             return false;
         }
 
-        for (String s : ipArr) {
+        for (String s : ipSegment) {
             boolean valid = check2(s);
             if (!valid) {
                 return false;
@@ -46,25 +46,26 @@ public class IpCheck {
         return true;
     }
 
-    private boolean check2(String s) {
-        // 校验是否为空字符
-        final int n = s.length();
+    private boolean check2(String ipSegment) {
+        // 校验字符是否为空字符串
         int i = 0;
-        while (i < n && s.charAt(i) == ' ') {
+        final int n = ipSegment.length();
+        while (i < n & ipSegment.charAt(i) == ' ') {
             i++;
         }
         if (i == n) {
             return false;
         }
-        // 判断数字
+
+        // 校验是否合法
         int digit = 0;
-        while (i < n && s.charAt(i) != ' ') {
-            final char c = s.charAt(i);
-            // 是否为数字
+        while (i < n && ipSegment.charAt(i) != ' ') {
+            char c = ipSegment.charAt(i);
             if (c < '0' || c > '9') {
                 return false;
             }
-            // 校验字符是否在0-255之间
+
+            // 校验是否大于255
             digit = digit * 10 + (c - '0');
             if (digit > 255) {
                 return false;
@@ -72,15 +73,12 @@ public class IpCheck {
             i++;
         }
 
-        // 后置空格,如果包含非空格，则不符合
         while (i < n) {
-            final char c = s.charAt(i);
-            if (c != ' ') {
+            if (ipSegment.charAt(i) != ' ') {
                 return false;
             }
             i++;
         }
-
         return true;
     }
 
